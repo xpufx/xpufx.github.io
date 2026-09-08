@@ -3,13 +3,137 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>xpufx.github.io</title>
+  <title>xpufx — github thingies</title>
+  <meta name="description" content="Landing page for xpufx projects: Paseo tools and plugins, apps, packaging, and web toys." />
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 10vh auto; padding: 0 1rem; line-height: 1.6; }
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, sans-serif; max-width: 760px; margin: 0 auto; padding: 2rem 1rem 4rem; line-height: 1.6; }
+    header { margin-bottom: 2rem; }
+    h1 { margin-bottom: 0.25rem; }
+    header p { margin-top: 0; opacity: 0.85; }
+    section { margin-top: 2.5rem; }
+    h2 { border-bottom: 1px solid currentColor; padding-bottom: 0.25rem; }
+    h3 { margin-top: 1.5rem; }
+    ul.cards { list-style: none; padding: 0; display: grid; gap: 1rem; }
+    ul.cards li { border: 1px solid CanvasText; border-radius: 8px; padding: 1rem; }
+    ul.cards li strong { display: block; font-size: 1.05rem; }
+    ul.cards li p { margin: 0.5rem 0; }
+    .links { font-size: 0.9rem; }
+    .links a { margin-right: 0.75rem; }
+    footer { margin-top: 3rem; font-size: 0.9rem; opacity: 0.75; }
   </style>
 </head>
 <body>
-  <h1>xpufx.github.io</h1>
-  <p>Site is live. Replace this with your content.</p>
+  <header>
+    <h1>xpufx</h1>
+    <p>Landing page for my GitHub thingies. Code at <a href="https://github.com/xpufx">github.com/xpufx</a>.</p>
+  </header>
+
+  <main>
+    <section id="paseo">
+      <h2>Paseo</h2>
+      <p>Tools and plugins for <a href="https://paseo.sh">Paseo</a> agents and plugins.</p>
+
+      <h3>Tools</h3>
+      <ul class="cards">
+        <li>
+          <strong>paseo-plugin-helper</strong>
+          <p>Developer toolkit, UI design system, and lifecycle primitives for Paseo plugins.</p>
+          <div class="links">
+            <a href="https://github.com/xpufx/paseo-plugin-helper">GitHub</a>
+            <a href="https://www.npmjs.com/package/paseo-plugin-helper">npm</a>
+          </div>
+        </li>
+        <li>
+          <strong>paseo-x-comms-mcp</strong>
+          <p>MCP server that lets agents on one Paseo daemon talk to agents on another, via relay offer or direct host.</p>
+          <div class="links">
+            <a href="https://github.com/xpufx/paseo-x-comms/tree/main/mcp">GitHub (mcp/)</a>
+            <a href="https://www.npmjs.com/package/paseo-x-comms-mcp">npm</a>
+          </div>
+        </li>
+      </ul>
+
+      <h3>Plugins</h3>
+      <ul class="cards">
+        <li>
+          <strong>paseo-top</strong>
+          <p>Live host system resource monitor for Paseo. Pill + modal utilization view.</p>
+          <div class="links"><a href="https://github.com/xpufx/paseo-top">GitHub</a></div>
+        </li>
+        <li>
+          <strong>paseo-x-comms</strong>
+          <p>Cross-daemon agent communication plugin (companion to the MCP server above).</p>
+          <div class="links"><a href="https://github.com/xpufx/paseo-x-comms">GitHub</a></div>
+        </li>
+        <li>
+          <strong>paseo-mcp-tools</strong>
+          <p>Plugin UI for checking MCP servers available to an agent session, with per-MCP actions.</p>
+          <div class="links"><a href="https://github.com/xpufx/paseo-mcp-tools">GitHub</a></div>
+        </li>
+        <li>
+          <strong>paseo-exfil</strong>
+          <p>Data exfiltration plugin for Paseo (demo).</p>
+          <div class="links"><a href="https://github.com/xpufx/paseo-exfil">GitHub</a></div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="apps">
+      <h2>Apps &amp; Scripts</h2>
+      <ul class="cards">
+        <li>
+          <strong>Uppidi Upload</strong>
+          <p>Cross-platform file uploader for phone, tablet, desktop, and web. Upload images, video, and files to your choice of free public hosting.</p>
+          <div class="links">
+            <a href="https://uppidi.com">uppidi.com</a>
+            <a href="https://github.com/xpufx/uppidi-upload">GitHub</a>
+          </div>
+        </li>
+        <li>
+          <strong>reddit-comments-overkill</strong>
+          <p>Browser userscript that deletes all comments of a Reddit user. Run it and leave the browser alone until done.</p>
+          <div class="links"><a href="https://github.com/xpufx/reddit-comments-overkill">GitHub</a></div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="packaging">
+      <h2>Packaging</h2>
+      <ul class="cards">
+        <li>
+          <strong>podman-isolated-pkgs</strong>
+          <p>Isolated package builds with Podman.</p>
+          <div class="links">
+            <a href="https://github.com/xpufx/podman-isolated-pkgs">GitHub</a>
+            <a href="https://xpufx.github.io/podman-isolated-pkgs/">Webpage</a>
+          </div>
+        </li>
+        <li>
+          <strong>xpufx-pkgs</strong>
+          <p>Packaged binary versions of applications for various distros, plus .tar.gz binaries.</p>
+          <div class="links">
+            <a href="https://github.com/xpufx/xpufx-pkgs">GitHub</a>
+            <a href="https://xpufx.github.io/xpufx-pkgs/">Webpage</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="web">
+      <h2>Web toys</h2>
+      <ul class="cards">
+        <li>
+          <strong>fretboard.js</strong>
+          <p>Fretboard diagram generator (fork).</p>
+          <div class="links"><a href="https://github.com/xpufx/fretboard.js">GitHub</a></div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="https://github.com/xpufx">github.com/xpufx</a></p>
+  </footer>
 </body>
 </html>
