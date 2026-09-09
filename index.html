@@ -30,6 +30,12 @@
     .top { display: flex; gap: 1rem; align-items: center; }
     .avatar { width: 80px; height: 80px; border-radius: 50%; }
     .github-link { display: inline-flex; align-items: center; gap: 0.35rem; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85em; background: Canvas; border: 1px solid GrayText; border-radius: 4px; padding: 0.1rem 0.35rem; }
+    pre { overflow-x: auto; border: 1px solid GrayText; border-radius: 8px; padding: 0.75rem; font-size: 0.85rem; }
+    pre code { background: none; border: none; padding: 0; }
+    .ver { display: inline-block; font-size: 0.75rem; font-weight: 700; border: 1px solid currentColor; border-radius: 999px; padding: 0 0.5rem; margin-left: 0.4rem; vertical-align: middle; }
+    .install { margin-top: 0.75rem; font-size: 0.9rem; }
+    .install p { margin: 0.5rem 0 0.25rem; }
     footer { margin-top: 3rem; font-size: 0.9rem; opacity: 0.75; }
   </style>
 </head>
@@ -87,6 +93,7 @@
     <section id="paseo">
       <h2>Paseo <a class="anchor" href="#paseo">#</a></h2>
       <p>Tools and plugins for <a href="https://paseo.sh">Paseo</a> agents and plugins.</p>
+      <p><strong>v7</strong> tracks <code>main</code> (Paseo v0.7 plugin API). <strong>v8</strong> tracks the <code>v0.8</code> branches (<code>v8</code> for paseo-plugin-helper) for the <a href="https://paseo.sh/docs/plugins/v0.8/migration">Paseo v0.8 runtime-entries migration</a>: <code>index.client.tsx</code> / <code>index.server.ts</code> entries, <code>client/</code> / <code>server/</code> / <code>shared/</code> directories, and <code>requirements.paseo &gt;=0.8.0</code>. Install the line that matches your daemon.</p>
 
       <h3 id="paseo-tools">Tools <a class="anchor" href="#paseo-tools">#</a></h3>
       <ul class="cards">
@@ -96,10 +103,16 @@
             <a href="https://www.npmjs.com/package/paseo-plugin-helper"><img src="https://img.shields.io/npm/v/paseo-plugin-helper" alt="npm version" /></a>
             <a href="https://github.com/xpufx/paseo-plugin-helper/tags"><img src="https://img.shields.io/github/v/tag/xpufx/paseo-plugin-helper" alt="GitHub tag" /></a>
           </div>
-          <p>Developer toolkit, UI design system, and lifecycle primitives for Paseo plugins.</p>
+          <p>Developer toolkit, UI design system, and lifecycle primitives for Paseo plugins. Dev library, not installed via <code>paseo plugin add</code>.</p>
           <div class="links">
             <a href="https://github.com/xpufx/paseo-plugin-helper">GitHub</a>
             <a href="https://www.npmjs.com/package/paseo-plugin-helper">npm</a>
+          </div>
+          <div class="install">
+            <p><span class="ver">v7</span> Paseo v0.7 (<code>main</code>)</p>
+            <pre><code>npm install github:xpufx/paseo-plugin-helper</code></pre>
+            <p><span class="ver">v8</span> Paseo v0.8 (<code>v8</code> branch)</p>
+            <pre><code>npm install github:xpufx/paseo-plugin-helper#v8</code></pre>
           </div>
         </li>
         <li id="paseo-x-comms-mcp">
@@ -110,8 +123,14 @@
           </div>
           <p>MCP server that lets agents on one Paseo daemon talk to agents on another, via relay offer or direct host.</p>
           <div class="links">
-            <a href="https://github.com/xpufx/paseo-x-comms/tree/main/mcp">GitHub (mcp/)</a>
+            <a href="https://github.com/xpufx/paseo-x-comms/tree/main/mcp">GitHub (mcp/, v7)</a>
+            <a href="https://github.com/xpufx/paseo-x-comms/tree/v0.8/mcp">GitHub (mcp/, v8)</a>
             <a href="https://www.npmjs.com/package/paseo-x-comms-mcp">npm</a>
+          </div>
+          <div class="install">
+            <p><span class="ver">v7</span> standalone</p>
+            <pre><code>npm install -g paseo-x-comms-mcp</code></pre>
+            <p><span class="ver">v8</span> same npm package; plugin side uses the <code>v0.8</code> branch below</p>
           </div>
         </li>
       </ul>
@@ -124,7 +143,13 @@
             <a href="https://github.com/xpufx/paseo-top/tags"><img src="https://img.shields.io/github/v/tag/xpufx/paseo-top" alt="GitHub tag" /></a>
           </div>
           <p>Live host system resource monitor for Paseo. Pill + modal utilization view.</p>
-          <div class="links"><a href="https://github.com/xpufx/paseo-top">GitHub</a></div>
+          <div class="links"><a href="https://github.com/xpufx/paseo-top">GitHub (main, v7)</a> <a href="https://github.com/xpufx/paseo-top/tree/v0.8">GitHub (v0.8, v8)</a></div>
+          <div class="install">
+            <p><span class="ver">v7</span> Paseo v0.7</p>
+            <pre><code>paseo plugin add xpufx/paseo-top</code></pre>
+            <p><span class="ver">v8</span> Paseo v0.8 beta</p>
+            <pre><code>paseo plugin add xpufx/paseo-top --ref v0.8</code></pre>
+          </div>
         </li>
         <li id="paseo-x-comms">
           <strong>paseo-x-comms <a class="anchor" href="#paseo-x-comms">#</a></strong>
@@ -132,7 +157,13 @@
             <a href="https://github.com/xpufx/paseo-x-comms/tags"><img src="https://img.shields.io/github/v/tag/xpufx/paseo-x-comms" alt="GitHub tag" /></a>
           </div>
           <p>Cross-daemon agent communication plugin (companion to the MCP server above).</p>
-          <div class="links"><a href="https://github.com/xpufx/paseo-x-comms">GitHub</a></div>
+          <div class="links"><a href="https://github.com/xpufx/paseo-x-comms">GitHub (main, v7)</a> <a href="https://github.com/xpufx/paseo-x-comms/tree/v0.8">GitHub (v0.8, v8)</a></div>
+          <div class="install">
+            <p><span class="ver">v7</span> Paseo v0.7</p>
+            <pre><code>paseo plugin add xpufx/paseo-x-comms</code></pre>
+            <p><span class="ver">v8</span> Paseo v0.8 beta</p>
+            <pre><code>paseo plugin add xpufx/paseo-x-comms --ref v0.8</code></pre>
+          </div>
         </li>
         <li id="paseo-mcp-tools">
           <strong>paseo-mcp-tools <a class="anchor" href="#paseo-mcp-tools">#</a></strong>
@@ -140,12 +171,22 @@
             <a href="https://github.com/xpufx/paseo-mcp-tools/tags"><img src="https://img.shields.io/github/v/tag/xpufx/paseo-mcp-tools" alt="GitHub tag" /></a>
           </div>
           <p>Plugin UI for checking MCP servers available to an agent session, with per-MCP actions.</p>
-          <div class="links"><a href="https://github.com/xpufx/paseo-mcp-tools">GitHub</a></div>
+          <div class="links"><a href="https://github.com/xpufx/paseo-mcp-tools">GitHub (main, v7)</a> <a href="https://github.com/xpufx/paseo-mcp-tools/tree/v0.8">GitHub (v0.8, v8)</a></div>
+          <div class="install">
+            <p><span class="ver">v7</span> Paseo v0.7</p>
+            <pre><code>paseo plugin add xpufx/paseo-mcp-tools</code></pre>
+            <p><span class="ver">v8</span> Paseo v0.8 beta</p>
+            <pre><code>paseo plugin add xpufx/paseo-mcp-tools --ref v0.8</code></pre>
+          </div>
         </li>
         <li id="paseo-exfil">
           <strong>paseo-exfil <a class="anchor" href="#paseo-exfil">#</a></strong>
-          <p>Data exfiltration plugin for Paseo (demo).</p>
-          <div class="links"><a href="https://github.com/xpufx/paseo-exfil">GitHub</a></div>
+          <p>Data exfiltration plugin for Paseo (demo). v7 API only, no v8 branch. Do not install; do not trust plugins you did not write.</p>
+          <div class="links"><a href="https://github.com/xpufx/paseo-exfil">GitHub (main, v7)</a></div>
+          <div class="install">
+            <p><span class="ver">v7</span> demo only</p>
+            <pre><code>paseo plugin install /path/to/paseo-exfil</code></pre>
+          </div>
         </li>
       </ul>
     </section>
