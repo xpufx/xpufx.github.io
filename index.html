@@ -68,6 +68,7 @@
                 <li><a href="#paseo-x-comms">paseo-x-comms</a></li>
                 <li><a href="#paseo-mcp-tools">paseo-mcp-tools</a></li>
                 <li><a href="#paseo-forgejo">paseo-forgejo</a></li>
+                <li><a href="#uppidi-fleet">Uppidi Fleet</a></li>
                 <li><a href="#paseo-slash">paseo-slash</a></li>
                 <li><a href="#twofado">twofado</a></li>
               </ul>
@@ -219,6 +220,17 @@
             <pre><code>paseo plugin add xpufx/paseo --path plugins/forges</code></pre>
           </div>
         </li>
+        <li id="uppidi-fleet">
+          <strong>Uppidi Fleet <span class="ver">WIP</span> <a class="anchor" href="#uppidi-fleet">#</a></strong>
+          <p>An opinionated, full-lifecycle autonomous engineering fleet for Paseo, driven by a Forgejo/Gitea-family issue board. It coordinates an operator-facing Front Desk, one orchestrator per repository, and ephemeral coding workers in isolated worktrees.</p>
+          <p>The Fleet Cockpit brings queues, agent health, board state, webhook routing, and router health into Paseo. Setup requires Paseo 0.8 or newer, a Forgejo/Gitea-family host, an issue-write token, configured agent providers, and a host runner.</p>
+          <div class="links">
+            <a href="https://github.com/xpufx/paseo/tree/main/plugins/uppidi-fleet">GitHub</a>
+          </div>
+          <div class="install">
+            <pre><code>paseo plugin add xpufx/paseo --path plugins/uppidi-fleet</code></pre>
+          </div>
+        </li>
         <li id="paseo-slash">
           <strong>paseo-slash <a class="anchor" href="#paseo-slash">#</a></strong>
           <div class="badges">
@@ -240,10 +252,11 @@
           <div class="badges">
             <a href="https://www.npmjs.com/package/@xpufx/paseo-twofado"><img src="https://img.shields.io/npm/v/@xpufx/paseo-twofado" alt="npm version" /></a>
           </div>
-          <p>2FA and one-time-password helpers for Paseo agent workflows.</p>
+          <p>Approval-gate UI and notifications for the 2fado privileged-command daemon. Review and answer pending command requests, questions, and policy prompts from Paseo, with companion daemon lifecycle controls.</p>
           <div class="links">
-            <a href="https://www.npmjs.com/package/@xpufx/paseo-twofado">npm</a>
-            <a href="https://github.com/xpufx/paseo/tree/main/plugins/twofado">GitHub</a>
+            <a href="https://github.com/xpufx/2fado">2fado</a>
+            <a href="https://www.npmjs.com/package/@xpufx/paseo-twofado">Plugin on npm</a>
+            <a href="https://github.com/xpufx/paseo/tree/main/plugins/twofado">Plugin source</a>
           </div>
           <div class="install">
             <pre><code>paseo plugin add npm:@xpufx/paseo-twofado</code></pre>
